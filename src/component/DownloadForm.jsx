@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+const PDF_URL = './../../public/yudhishthir-Grand-Total.pdf'; // URL of the PDF file
+
 const DownloadForm = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -28,22 +30,45 @@ const DownloadForm = () => {
     }));
   };
 
+  const downloadThePDF = (url) => {
+    fetch(url)
+      .then((response) => {
+        // Check if the response is OK (status 200)
+        if (!response.ok) {
+          throw new Error(`Failed to fetch PDF: ${response.statusText}`);
+        }
+        return response.blob(); // Return the blob
+      })
+      .then((blob) => {
+        // Create a URL for the blob
+        const blobUrl = window.URL.createObjectURL(blob); // No need for new Blob([blob])
+        const a = document.createElement('a');
+        a.href = blobUrl;
+        a.download = 'YudhishthirSharma.pdf'; // Set a consistent download name
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(blobUrl); // Clean up the blob URL
+        console.log('PDF download triggered');
+      })
+      .catch((error) => {
+        console.error('Error downloading PDF:', error);
+        alert(
+          'Failed to download PDF. Please check if the file exists or try again later.'
+        );
+      });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!validate()) return;
-
-    // Trigger PDF download
-    const link = document.createElement('a');
-    link.href = './../assets/yudhishthir grand total.pdf'; // Ensure this path is correct
-    link.download = 'brochure.pdf';
-    link.click();
+    downloadThePDF(PDF_URL);
     console.log('Form submitted:', formData);
     // Optionally reset form
     setFormData({ name: '', email: '', contact: '', message: '' });
     setErrors({});
-      console.log('Form submitted:', formData);
-    
-      
+    console.log('Form submitted:', formData);
   };
 
   return (
@@ -76,7 +101,7 @@ const DownloadForm = () => {
           </label>
           <input
             type="email"
-            name="email" 
+            name="email"
             value={formData.email}
             onChange={handleChange}
             className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:border-blue-500"
