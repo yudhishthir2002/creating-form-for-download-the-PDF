@@ -73,7 +73,7 @@ const DownloadForm = () => {
 
   return (
     <div className="w-full max-w-lg mx-auto p-6 bg-white rounded-xl shadow-md mt-10">
-      <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800">
+      <h2 className="text-3xl font-medium text-center mb-6 text-blue-800 ">
         Get Your Free PDF
       </h2>
       <form onSubmit={handleSubmit} className="space-y-4">
