@@ -131,7 +131,8 @@ const DownloadForm = () => {
         {/* Message */}
         <div>
           <label className="block text-gray-700 font-medium mb-1">
-            Message <span className="text-red-500"> *</span>
+                      Message
+                      {/* <span className="text-red-500"> *</span> */}
           </label>
           <textarea
             name="message"
