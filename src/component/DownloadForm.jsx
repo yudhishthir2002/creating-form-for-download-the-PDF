@@ -18,8 +18,8 @@ const DownloadForm = () => {
     if (!formData.email.trim()) newErrors.email = 'Email is required';
     if (!formData.contact.trim())
       newErrors.contact = 'Contact number is required';
-    if (!formData.message.trim()) newErrors.message = 'Message is required';
-    setErrors(newErrors);
+    // if (!formData.message.trim()) newErrors.message = 'Message is required';
+    // setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
@@ -140,9 +140,9 @@ const DownloadForm = () => {
             onChange={handleChange}
             className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:border-blue-500 resize-none"
           />
-          {errors.message && (
+          {/* {errors.message && (
             <p className="text-red-600 text-sm mt-1">{errors.message}</p>
-          )}
+          )} */}
         </div>
 
         <button
