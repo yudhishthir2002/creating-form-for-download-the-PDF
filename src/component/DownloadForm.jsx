@@ -40,8 +40,8 @@ const DownloadForm = () => {
         return response.blob(); // Return the blob
       })
       .then((blob) => {
-        // Create a URL for the blob
-        const blobUrl = window.URL.createObjectURL(blob); // No need for new Blob([blob])
+       
+        const blobUrl = window.URL.createObjectURL(blob); 
         const a = document.createElement('a');
         a.href = blobUrl;
         a.download = 'YudhishthirSharma.pdf'; // Set a consistent download name
@@ -74,7 +74,7 @@ const DownloadForm = () => {
   return (
     <div className="w-full max-w-lg mx-auto p-6 bg-white rounded-xl shadow-md mt-10">
       <h2 className="text-3xl font-medium text-center mb-6 text-blue-800 ">
-        Get Your Free PDF
+        Get Free Consultation!
       </h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Name */}
