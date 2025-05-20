@@ -34,14 +34,15 @@ const DownloadForm = () => {
 
     // Trigger PDF download
     const link = document.createElement('a');
-    link.href = '/files/brochure.pdf'; // Ensure this path is correct
+    link.href = './../assets/yudhishthir grand total.pdf'; // Ensure this path is correct
     link.download = 'brochure.pdf';
     link.click();
     console.log('Form submitted:', formData);
     // Optionally reset form
     setFormData({ name: '', email: '', contact: '', message: '' });
     setErrors({});
-    console.log('Form submitted:', formData);
+      console.log('Form submitted:', formData);
+    
       
   };
 
