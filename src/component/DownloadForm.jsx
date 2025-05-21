@@ -140,10 +140,7 @@ const DownloadForm = () => {
             onChange={handleChange}
             className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:border-blue-500 resize-none"
           />
-          {/* {errors.message && (
-            <p className="text-red-600 text-sm mt-1">{errors.message}</p>
-          )} */}
-        </div>
+          </div>
 
         <button
           type="submit"
