@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const PDF_URL = './../../public/LuckyBoss.pdf'; // URL of the PDF file
+const PDF_URL = './../../public/LuckyBoss.pdf'; 
 
 const DownloadForm = () => {
   const [formData, setFormData] = useState({
@@ -27,29 +27,30 @@ const DownloadForm = () => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
-    }));
+    }
+    ));
   };
 
   const downloadThePDF = (url) => {
     fetch(url)
       .then((response) => {
-        // Check if the response is OK (status 200)
+       
         if (!response.ok) {
           throw new Error(`Failed to fetch PDF: ${response.statusText}`);
         }
-        return response.blob(); // Return the blob
+        return response.blob(); 
       })
       .then((blob) => {
        
         const blobUrl = window.URL.createObjectURL(blob); 
         const a = document.createElement('a');
         a.href = blobUrl;
-        a.download = 'LuckyBoss.pdf'; // Set a consistent download name
+        a.download = 'LuckyBoss.pdf'; 
         a.style.display = 'none';
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
-        window.URL.revokeObjectURL(blobUrl); // Clean up the blob URL
+        window.URL.revokeObjectURL(blobUrl); 
         console.log('PDF download triggered');
       })
       .catch((error) => {
@@ -65,7 +66,7 @@ const DownloadForm = () => {
     if (!validate()) return;
     downloadThePDF(PDF_URL);
     console.log('Form submitted:', formData);
-    // Optionally reset form
+    
     setFormData({ name: '', email: '', contact: '', message: '' });
     setErrors({});
     console.log('Form submitted:', formData);
