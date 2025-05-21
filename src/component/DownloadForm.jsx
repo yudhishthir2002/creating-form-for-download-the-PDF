@@ -18,8 +18,6 @@ const DownloadForm = () => {
     if (!formData.email.trim()) newErrors.email = 'Email is required';
     if (!formData.contact.trim())
       newErrors.contact = 'Contact number is required';
-    // if (!formData.message.trim()) newErrors.message = 'Message is required';
-    // setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
