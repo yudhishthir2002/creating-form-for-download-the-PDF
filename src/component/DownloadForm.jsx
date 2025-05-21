@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const PDF_URL = './../../public/yudhishthir-Grand-Total.pdf'; // URL of the PDF file
+const PDF_URL = './../../public/LuckyBoss.pdf'; // URL of the PDF file
 
 const DownloadForm = () => {
   const [formData, setFormData] = useState({
@@ -44,7 +44,7 @@ const DownloadForm = () => {
         const blobUrl = window.URL.createObjectURL(blob); 
         const a = document.createElement('a');
         a.href = blobUrl;
-        a.download = 'YudhishthirSharma.pdf'; // Set a consistent download name
+        a.download = 'LuckyBoss.pdf'; // Set a consistent download name
         a.style.display = 'none';
         document.body.appendChild(a);
         a.click();
