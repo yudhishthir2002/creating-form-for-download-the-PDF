@@ -67,7 +67,7 @@ const DownloadForm = () => {
     console.log('Form submitted:', formData);
     
     setFormData({ name: '', email: '', contact: '', message: '' });
-    setErrors({});
+    setErrors({ });
     console.log('Form submitted:', formData);
   };
 
@@ -96,7 +96,7 @@ const DownloadForm = () => {
             )}
           </div>
 
-          {/* Email */}
+          {/*Email*/}
           <div>
             <label className="block text-gray-700 font-medium mb-1">
               Email <span className="text-red-500"> *</span>
