@@ -79,7 +79,7 @@ const DownloadForm = () => {
           Get Free Consultation!
         </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Name */}
+          {/*Name*/}
           <div>
             <label className="block text-gray-700 font-medium mb-1">
               Name <span className="text-red-500"> *</span>
