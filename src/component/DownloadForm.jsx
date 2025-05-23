@@ -125,9 +125,11 @@ const DownloadForm = () => {
               onChange={handleChange}
               className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:border-blue-500"
             />
-            {errors.contact && (
+            {
+              errors.contact && (
               <p className="text-red-600 text-sm mt-1">{errors.contact}</p>
-            )}
+            )
+            }
           </div>
 
           {/*Message*/}
@@ -143,7 +145,6 @@ const DownloadForm = () => {
               className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:border-blue-500 resize-none"
             />
           </div>
-
           <button
             type="submit"
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition duration-200"
