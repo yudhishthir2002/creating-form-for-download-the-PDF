@@ -44,7 +44,7 @@ const DownloadForm = () => {
         const blobUrl = window.URL.createObjectURL(blob); 
         const a = document.createElement('a');
         a.href = blobUrl;
-        a.download = 'LuckyBoss.pdf'; 
+        a.download = 'MD-Global-HR-Consulting-Brochure.pdf'; 
         a.style.display = 'none';
         document.body.appendChild(a);
         a.click();
