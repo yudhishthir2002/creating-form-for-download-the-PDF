@@ -11,7 +11,7 @@ const DownloadForm = () => {
   });
 
   const [errors, setErrors] = useState({});
-  const [isOpen, setisOpen] = useState(false);
+  
 
   const validate = () => {
     const newErrors = {};
