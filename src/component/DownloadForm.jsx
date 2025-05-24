@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const PDF_URL = './../../public/LuckyBoss.pdf'; 
+const PDF_URL = './../../public/MD-Global-HR-Consulting-Brochure.pdf'; 
 
 const DownloadForm = () => {
   const [formData, setFormData] = useState({
